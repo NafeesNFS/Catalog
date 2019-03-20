@@ -1,0 +1,53 @@
+{% include 'nav.html' %}
+<div class="main">
+<head>
+<title>My Website</title>
+</head>
+{% block content %}
+  <!-- {% for na in nfs_gmb %}
+    <a href="{{ url_for('showWebsite',naid=na.id)}}">{{na.name}}</a><br>
+    {% endfor %} -->
+    {% with messages = get_flashed_messages() %}
+	    {% if messages %}
+	        <div class="alert alert-success alert-dismissable animated fadeIn">
+	            {% for message in messages %}
+	            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+	            <p class="h4"><strong>{{ message }}</strong></p>
+	            {% endfor %}
+	        </div>
+	    {% endif %}
+	{% endwith %}
+
+	<h1 style="font-family: Comic Sans MS;color:green;"><center>WELCOME To Websites Info</center></h1>
+	
+	<div class="w3-content w3-section" style="max-width:1000px">
+  <img class="mySlides" src="https://gunaxin.com/wp-content/uploads/2012/06/The-Top-10-Websites-in-the-World-560x220.jpg" style="width:100%;height:300">
+  <img class="mySlides" src="http://pluspng.com/img-png/microsoft-hd-png-aol-to-take-over-microsoft-display-ad-business-bing-to-power-aol-search-1920.png" style="width:100%;height:300">
+   <img class="mySlides" src="http://hacerdineroenamazon.com/wp-content/uploads/2018/03/SELLER-CENTRAL.jpg" style="width:100%;height:300">
+  <img class="mySlides" src="http://www.tutorialspoint.com/articles/wp-content/uploads/2016/03/google-chrome-tutorial-mac.jpg" style="width:100%;height:300">
+   <img class="mySlides" src="https://cdn.blog.psafe.com/en/blog/wp-content/uploads/2017/08/S12017-Project-1-Growing-US-BLOG-EN-How-to-Identify-a-Sketchy-Third-Party-Seller-on-Amazon.jpg" style="width:100%;height:300">
+   <img class="mySlides" src="http://indiannerve.com/wp-content/uploads/2014/05/flipkart-myntra.png" style="width:100%;height:300">
+   <img class="mySlides" src="https://indianonlineseller.com/wp-content/uploads/2017/07/Myntra-Jabong-acquisition-fb.jpg" style="width:100%;height:300">
+   <marquee><h3 style="font-family:Comic Sans Ms;color:blue;">Any further tools are automatically updated</h3></marquee>
+   </div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 3000); // Change image every 3 seconds
+}
+</script>
+
+    
+{% endblock content %}
+</div>

@@ -1,0 +1,35 @@
+{% include 'nav.html' %}
+<div class="main">
+{% block content %}
+
+<div class="">
+		<div class="mr-sm-2 mb-2 col-sm-8" style="margin: 10px;">
+			<form action="{{ url_for('editWebsiteTool',naid=naid,nftname=tooldetails.name)}}" method="POST">
+				<div class="panel panel-info">
+				  <div class="panel-heading">Edit Tool Details</div>
+				  <div class="panel-body">
+				  	
+					  <div class="form-group">
+					  	<label class="text-primary" for="name">Enter Tool Name:</label>
+					    <input type="name" class="form-control" name="name" value="{{tooldetails.name}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="discription">Enter discription:</label>
+					    <input type="text" class="form-control" name="discription" value="{{tooldetails.discription}}">
+					  </div>
+					  
+					  <div class="form-group">
+					  	<label class="text-primary" for="year">Enter Year:</label>
+					    <input type="text" class="form-control" name="year" value="{{tooldetails.year}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="founder">Enter founder:</label>
+					    <input type="text" class="form-control" name="founder" value="{{tooldetails.founder}}">
+					  </div>					  
+				  </div> 
+				  <div class="panel-footer text-center"><input type="submit" class="btn btn-primary" value="Edit"></div>
+				</div>
+				</form>
+			</div>
+</div>
+{% endblock content %}
